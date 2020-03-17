@@ -1,0 +1,6 @@
+{
+  "name": "auxmoney/opentracing-bundle-amqplib-rabbitmq",
+  "type": "symfony-bundle",
+  "license": "MIT",
+  "require": {}
+}
