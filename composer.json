@@ -1,10 +1,25 @@
 {
   "name": "auxmoney/opentracing-bundle-amqplib-rabbitmq",
+  "description": "Symfony Opentracing bundle extension for amqplib/RabbitMq",
+  "keywords": [
+    "auxmoney",
+    "opentracing",
+    "opentracing-bundle",
+    "symfony",
+    "symfony-bundle",
+    "distributed-tracing",
+    "amqp",
+    "amqplib",
+    "rabbitmq",
+    "queue",
+    "messaging",
+    "message-queue"
+  ],
   "type": "symfony-bundle",
   "license": "MIT",
   "require": {
     "php": "^7.1.33",
-    "auxmoney/opentracing-bundle-jaeger": "^v0.4.0",
+    "auxmoney/opentracing-bundle-core": "^v0.6",
     "opentracing/opentracing": "1.0.0-beta5@beta",
     "php-amqplib/rabbitmq-bundle": "^1.0"
   },
@@ -19,6 +34,11 @@
   "autoload": {
     "psr-4": {
       "Auxmoney\\OpentracingAmqplibRabbitMqBundle\\": "./"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Auxmoney\\OpentracingAmqplibRabbitMqBundle\\Tests\\": "./Tests/"
     }
   },
   "scripts": {
