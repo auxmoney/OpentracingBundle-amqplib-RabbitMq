@@ -28,12 +28,15 @@ final class BeforeMessageProcessingSubscriber implements EventSubscriberInterfac
         $this->tracing = $tracing;
     }
 
-    public static function getSubscribedEvents()
+    /**
+     * @return array<string,string>
+     */
+    public static function getSubscribedEvents(): array
     {
         return [BeforeProcessingMessageEvent::BEFORE_PROCESSING_MESSAGE => 'onBeforeMessageProcessing'];
     }
 
-    public function onBeforeMessageProcessing(AMQPEvent $AMQPEvent)
+    public function onBeforeMessageProcessing(AMQPEvent $AMQPEvent): void
     {
         $spanOptions = $this->getSpanOptions($AMQPEvent);
         $this->tracing->startActiveSpan(
@@ -42,6 +45,11 @@ final class BeforeMessageProcessingSubscriber implements EventSubscriberInterfac
         );
     }
 
+    /**
+     * @param AMQPEvent $AMQPEvent
+     *
+     * @return array<string,mixed>
+     */
     public function getSpanOptions(AMQPEvent $AMQPEvent): array
     {
         $options = [];

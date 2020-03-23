@@ -33,7 +33,14 @@ final class Producer extends AmqplibProducer
         $this->tracingService = $tracingService;
     }
 
-    public function publish($msgBody, $routingKey = '', $additionalProperties = array(), array $headers = null)
+    /**
+     * @param string $msgBody
+     * @param string $routingKey
+     * @param array<string,mixed> $additionalProperties
+     * @param array<string,mixed> $headers
+     * @return void
+     */
+    public function publish($msgBody, $routingKey = '', $additionalProperties = array(), array $headers = null): void
     {
         $exchangeName = $this->exchangeOptions['name'];
 

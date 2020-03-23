@@ -21,12 +21,15 @@ final class AfterMessageProcessingSubscriber implements EventSubscriberInterface
         $this->persistence = $persistence;
     }
 
+    /**
+     * @return array<string,string>
+     */
     public static function getSubscribedEvents()
     {
         return [BeforeProcessingMessageEvent::AFTER_PROCESSING_MESSAGE => 'onAfterMessageProcessing'];
     }
 
-    public function onAfterMessageProcessing(AMQPEvent $AMQPEvent)
+    public function onAfterMessageProcessing(AMQPEvent $AMQPEvent): void
     {
         $this->tracing->finishActiveSpan();
         $this->persistence->flush();
