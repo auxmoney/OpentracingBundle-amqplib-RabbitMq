@@ -36,9 +36,9 @@ final class BeforeMessageProcessingSubscriber implements EventSubscriberInterfac
         return [BeforeProcessingMessageEvent::BEFORE_PROCESSING_MESSAGE => 'onBeforeMessageProcessing'];
     }
 
-    public function onBeforeMessageProcessing(AMQPEvent $AMQPEvent): void
+    public function onBeforeMessageProcessing(AMQPEvent $amqpEvent): void
     {
-        $spanOptions = $this->getSpanOptions($AMQPEvent);
+        $spanOptions = $this->getSpanOptions($amqpEvent);
         $this->tracing->startActiveSpan(
             sprintf(self::SPAN_NAME, $spanOptions['tags'][self::TAG_QUEUE_NAME]),
             $spanOptions
@@ -46,23 +46,25 @@ final class BeforeMessageProcessingSubscriber implements EventSubscriberInterfac
     }
 
     /**
-     * @param AMQPEvent $AMQPEvent
+     * @param AMQPEvent $amqpEvent
      *
      * @return array<string,mixed>
+     *
+     * @SuppressWarnings(PHPMD.StaticAccess)
      */
-    public function getSpanOptions(AMQPEvent $AMQPEvent): array
+    public function getSpanOptions(AMQPEvent $amqpEvent): array
     {
         $options = [];
         $options['tags'][SPAN_KIND] = SPAN_KIND_MESSAGE_BUS_CONSUMER;
 
         /** @var Consumer $consumer */
-        $consumer = $AMQPEvent->getConsumer();
+        $consumer = $amqpEvent->getConsumer();
         $queueOptions = $consumer->getQueueOptions();
         $options['tags'][self::TAG_QUEUE_NAME] = $queueOptions['name'];
 
-        $amqpMessageProperties = $AMQPEvent->getAMQPMessage()->get_properties();
-        if (array_key_exists('application_headers', $amqpMessageProperties)) {
-            $applicationHeaders = $amqpMessageProperties['application_headers']->getNativeData();
+        $messageProperties = $amqpEvent->getAMQPMessage()->get_properties();
+        if (array_key_exists('application_headers', $messageProperties)) {
+            $applicationHeaders = $messageProperties['application_headers']->getNativeData();
             $externalSpanContext = $this->utility->extractSpanContext($applicationHeaders);
             if ($externalSpanContext) {
                 $options['references'] = Reference::create(Reference::FOLLOWS_FROM, $externalSpanContext);

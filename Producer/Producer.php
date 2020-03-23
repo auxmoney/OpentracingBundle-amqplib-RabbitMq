@@ -25,11 +25,11 @@ final class Producer extends AmqplibProducer
 
     public function __construct(
         Tracing $tracingService,
-        AbstractConnection $conn,
-        AMQPChannel $ch = null,
+        AbstractConnection $connection,
+        AMQPChannel $channel = null,
         $consumerTag = null
     ) {
-        parent::__construct($conn, $ch, $consumerTag);
+        parent::__construct($connection, $channel, $consumerTag);
         $this->tracingService = $tracingService;
     }
 

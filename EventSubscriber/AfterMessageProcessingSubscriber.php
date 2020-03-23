@@ -29,7 +29,10 @@ final class AfterMessageProcessingSubscriber implements EventSubscriberInterface
         return [BeforeProcessingMessageEvent::AFTER_PROCESSING_MESSAGE => 'onAfterMessageProcessing'];
     }
 
-    public function onAfterMessageProcessing(AMQPEvent $AMQPEvent): void
+    /**
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
+    public function onAfterMessageProcessing(AMQPEvent $amqpEvent): void
     {
         $this->tracing->finishActiveSpan();
         $this->persistence->flush();

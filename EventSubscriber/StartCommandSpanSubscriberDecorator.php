@@ -11,11 +11,11 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 final class StartCommandSpanSubscriberDecorator implements EventSubscriberInterface
 {
-    private $startCommandSpanSubscriber;
+    private $decoratedSubscriber;
 
-    public function __construct(StartCommandSpanSubscriber $startCommandSpanSubscriber)
+    public function __construct(StartCommandSpanSubscriber $decoratedSubscriber)
     {
-        $this->startCommandSpanSubscriber = $startCommandSpanSubscriber;
+        $this->decoratedSubscriber = $decoratedSubscriber;
     }
 
     /**
@@ -33,6 +33,6 @@ final class StartCommandSpanSubscriberDecorator implements EventSubscriberInterf
         if ($event->getCommand() instanceof BaseConsumerCommand) {
             return;
         }
-        $this->startCommandSpanSubscriber->onCommand($event);
+        $this->decoratedSubscriber->onCommand($event);
     }
 }
