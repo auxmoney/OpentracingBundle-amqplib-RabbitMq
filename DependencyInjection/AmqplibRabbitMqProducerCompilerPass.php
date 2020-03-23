@@ -9,7 +9,7 @@ use Auxmoney\OpentracingBundle\Service\Tracing;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-class AmqplibRabbitMqProducerCompilerPass implements CompilerPassInterface
+final class AmqplibRabbitMqProducerCompilerPass implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container)
     {

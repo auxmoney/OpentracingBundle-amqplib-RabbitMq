@@ -6,3 +6,8 @@ services:
 
   Auxmoney\OpentracingAmqplibRabbitMqBundle\EventSubscriber\:
     resource: '../../EventSubscriber'
+
+  Auxmoney\OpentracingAmqplibRabbitMqBundle\EventSubscriber\StartCommandSpanSubscriberDecorator:
+    decorates: Auxmoney\OpentracingBundle\EventListener\StartCommandSpanSubscriber
+    arguments: ['@Auxmoney\OpentracingAmqplibRabbitMqBundle\EventSubscriber\StartCommandSpanSubscriberDecorator.inner']
+
