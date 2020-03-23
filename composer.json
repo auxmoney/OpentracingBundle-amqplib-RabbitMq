@@ -2,5 +2,35 @@
   "name": "auxmoney/opentracing-bundle-amqplib-rabbitmq",
   "type": "symfony-bundle",
   "license": "MIT",
-  "require": {}
+  "require": {
+    "php": "^7.1.33",
+    "auxmoney/opentracing-bundle-jaeger": "^v0.4.0",
+    "opentracing/opentracing": "1.0.0-beta5@beta",
+    "php-amqplib/rabbitmq-bundle": "^1.0"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-master",
+    "phpunit/phpunit": "^7.5",
+    "phpstan/phpstan": "^0.12",
+    "squizlabs/php_codesniffer": "^3.5",
+    "phpmd/phpmd": "^2.7",
+    "php-coveralls/php-coveralls": "^2.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Auxmoney\\OpentracingAmqplibRabbitMqBundle\\": "./"
+    }
+  },
+  "scripts": {
+    "quality": [
+      "@phpcs",
+      "@phpmd",
+      "@phpstan",
+      "@phpunit"
+    ],
+    "phpmd": "vendor/bin/phpmd . text cleancode,codesize,controversial,design,naming,unusedcode --exclude vendor,Tests",
+    "phpcs": "vendor/bin/phpcs",
+    "phpunit": "phpdbg -qrr vendor/bin/phpunit --colors=never --testsuite=unit",
+    "phpstan": "vendor/bin/phpstan analyse --no-progress"
+  }
 }
