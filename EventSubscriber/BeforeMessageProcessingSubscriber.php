@@ -16,7 +16,7 @@ use const OpenTracing\Tags\SPAN_KIND_MESSAGE_BUS_CONSUMER;
 
 final class BeforeMessageProcessingSubscriber implements EventSubscriberInterface
 {
-    private const SPAN_NAME = 'Processing message from "%s" queue ';
+    private const SPAN_NAME = 'Processing message from "%s" queue';
     private const TAG_QUEUE_NAME = 'QueueName';
 
     private $utility;
