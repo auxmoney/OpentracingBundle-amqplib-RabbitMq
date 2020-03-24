@@ -4,7 +4,7 @@
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/auxmoney/OpentracingBundle-amqplib-RabbitMq)
 ![Travis (.org)](https://img.shields.io/travis/auxmoney/OpentracingBundle-amqplib-RabbitMq)
 ![Coveralls github](https://img.shields.io/coveralls/github/auxmoney/OpentracingBundle-amqplib-RabbitMq)
-TODO: codacy
+![Codacy Badge](https://api.codacy.com/project/badge/Grade/0f9a9d8ae1084efaa11ec443ca426a75)
 ![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/auxmoney/OpentracingBundle-amqplib-RabbitMq)
 ![Scrutinizer code quality (GitHub/Bitbucket)](https://img.shields.io/scrutinizer/quality/g/auxmoney/OpentracingBundle-amqplib-RabbitMq)
 ![GitHub](https://img.shields.io/github/license/auxmoney/OpentracingBundle-amqplib-RabbitMq)
