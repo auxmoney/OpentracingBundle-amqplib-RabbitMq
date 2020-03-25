@@ -42,7 +42,7 @@ class FinishCommandSpanSubscriberDecoratorTest extends TestCase
 
     public function testGetSubscribedEvents(): void
     {
-        self::assertArrayHasKey('console.terminate', FinishCommandSpanSubscriber::getSubscribedEvents());
+        self::assertArrayHasKey('console.terminate', FinishCommandSpanSubscriberDecorator::getSubscribedEvents());
     }
 
     public function testOnTerminateWithNonBaseConsumerCommand(): void
