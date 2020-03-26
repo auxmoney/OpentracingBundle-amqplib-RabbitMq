@@ -23,7 +23,7 @@ This bundle is only an additional plugin and should not be installed independent
 
 After you have installed the OpentracingBundle:
 
-* require the dependencies:
+  * require the dependencies:
 
 ```bash
     composer req auxmoney/opentracing-bundle-amqplib-rabbitmq
@@ -35,7 +35,7 @@ If you are using [Symfony Flex](https://github.com/symfony/flex), you are all se
 
 If you are not using it, you need to manually enable the bundle:
 
-* add bundle to your application:
+  * add bundle to your application:
 
 ```php
     # Symfony 3: AppKernel.php
