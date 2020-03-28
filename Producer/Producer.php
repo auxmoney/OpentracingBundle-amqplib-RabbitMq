@@ -40,13 +40,13 @@ final class Producer extends AmqplibProducer
      * @param array<string,mixed> $headers
      * @return void
      */
-    public function publish($msgBody, $routingKey = '', $additionalProperties = array(), array $headers = null): void
+    public function publish($msgBody, $routingKey = '', $additionalProperties = [], array $headers = null): void
     {
         $exchangeName = $this->exchangeOptions['name'];
 
         $options = [
             'tags' => [
-                self::TAG_ROUTING_KEY => $routingKey ? $routingKey : 'none',
+                self::TAG_ROUTING_KEY => $routingKey ?: 'none',
                 self::TAG_EXCHANGE_NAME => $exchangeName,
                 SPAN_KIND => SPAN_KIND_MESSAGE_BUS_PRODUCER
             ]
@@ -54,9 +54,7 @@ final class Producer extends AmqplibProducer
 
         $this->tracingService->startActiveSpan(sprintf(self::SPAN_NAME, $exchangeName), $options);
 
-        if ($headers === null) {
-            $headers = [];
-        }
+        $headers = $headers ?? [];
         $headers = array_merge($headers, $this->tracingService->injectTracingHeadersIntoCarrier([]));
 
         parent::publish($msgBody, $routingKey, $additionalProperties, $headers);

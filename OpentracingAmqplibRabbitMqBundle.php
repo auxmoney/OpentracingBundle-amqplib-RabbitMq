@@ -12,10 +12,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 final class OpentracingAmqplibRabbitMqBundle extends Bundle
 {
-    /**
-     * @return void
-     */
-    public function build(ContainerBuilder $container)
+    public function build(ContainerBuilder $container): void
     {
         parent::build($container);
 

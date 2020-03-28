@@ -53,7 +53,7 @@ class FinishCommandSpanSubscriberDecoratorTest extends TestCase
 
         $consoleEvent = new ConsoleTerminateEvent($command->reveal(), $input->reveal(), $output->reveal(), 0);
 
-        $this->tracing->setTagOfActiveSpan("command.exit-code", 0)->shouldBeCalledTimes(1);
+        $this->tracing->setTagOfActiveSpan('command.exit-code', 0)->shouldBeCalledTimes(1);
         $this->tracing->finishActiveSpan()->shouldBeCalledTimes(1);
 
         $this->subject->onTerminate($consoleEvent);

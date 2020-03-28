@@ -2,10 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Auxmoney\OpentracingAmqplibRabbitMqBundle;
+namespace Auxmoney\OpentracingAmqplibRabbitMqBundle\Tests\Unit;
 
 use Auxmoney\OpentracingAmqplibRabbitMqBundle\DependencyInjection\AmqplibRabbitMqConsumerCompilerPass;
 use Auxmoney\OpentracingAmqplibRabbitMqBundle\DependencyInjection\AmqplibRabbitMqProducerCompilerPass;
+use Auxmoney\OpentracingAmqplibRabbitMqBundle\OpentracingAmqplibRabbitMqBundle;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 

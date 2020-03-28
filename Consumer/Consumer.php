@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Auxmoney\OpentracingAmqplibRabbitMqBundle\Consumer;
 
-use OldSound\RabbitMqBundle\RabbitMq\Consumer as AmqplibProducer;
+use OldSound\RabbitMqBundle\RabbitMq\Consumer as AmqplibConsumer;
 
-final class Consumer extends AmqplibProducer
+final class Consumer extends AmqplibConsumer
 {
     /**
      * @return array<string,mixed>

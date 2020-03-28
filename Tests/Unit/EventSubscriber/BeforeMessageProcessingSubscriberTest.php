@@ -53,7 +53,7 @@ class BeforeMessageProcessingSubscriberTest extends TestCase
         $connection = $this->prophesize(AbstractConnection::class);
 
         $consumer = new Consumer($connection->reveal());
-        $consumer->setQueueOptions(['name' => 'queueName']);
+        $consumer->setQueueOptions(['name' => 'QueueName']);
 
         $amqpEvent = $this->prophesize(AMQPEvent::class);
         $amqpEvent->getAMQPMessage()->shouldBeCalledTimes(1)->willReturn($amqpMessage->reveal());
@@ -69,14 +69,14 @@ class BeforeMessageProcessingSubscriberTest extends TestCase
         $expectedSpanOptions = [
             'tags' => [
                 'span.kind' => 'consumer',
-                'QueueName' => 'queueName',
+                'message_bus.queue_name' => 'QueueName',
             ],
             'references' => Reference::create('follows_from', $spanContext->reveal())
         ];
 
         $this->tracing
             ->startActiveSpan(
-                'Processing message from "queueName" queue',
+                'RabbitMq: Processing message from "QueueName" queue',
                 $expectedSpanOptions
             )->shouldBeCalledTimes(1);
 
@@ -96,7 +96,7 @@ class BeforeMessageProcessingSubscriberTest extends TestCase
         $connection = $this->prophesize(AbstractConnection::class);
 
         $consumer = new Consumer($connection->reveal());
-        $consumer->setQueueOptions(['name' => 'queueName']);
+        $consumer->setQueueOptions(['name' => 'QueueName']);
 
         $amqpEvent = $this->prophesize(AMQPEvent::class);
         $amqpEvent->getAMQPMessage()->shouldBeCalledTimes(1)->willReturn($amqpMessage->reveal());
@@ -110,13 +110,13 @@ class BeforeMessageProcessingSubscriberTest extends TestCase
         $expectedSpanOptions = [
             'tags' => [
                 'span.kind' => 'consumer',
-                'QueueName' => 'queueName',
+                'message_bus.queue_name' => 'QueueName',
             ]
         ];
 
         $this->tracing
             ->startActiveSpan(
-                'Processing message from "queueName" queue',
+                'RabbitMq: Processing message from "QueueName" queue',
                 $expectedSpanOptions
             )->shouldBeCalledTimes(1);
 
@@ -136,7 +136,7 @@ class BeforeMessageProcessingSubscriberTest extends TestCase
         $connection = $this->prophesize(AbstractConnection::class);
 
         $consumer = new Consumer($connection->reveal());
-        $consumer->setQueueOptions(['name' => 'queueName']);
+        $consumer->setQueueOptions(['name' => 'QueueName']);
 
         $amqpEvent = $this->prophesize(AMQPEvent::class);
         $amqpEvent->getAMQPMessage()->shouldBeCalledTimes(1)->willReturn($amqpMessage->reveal());
@@ -149,13 +149,13 @@ class BeforeMessageProcessingSubscriberTest extends TestCase
         $expectedSpanOptions = [
             'tags' => [
                 'span.kind' => 'consumer',
-                'QueueName' => 'queueName',
+                'message_bus.queue_name' => 'QueueName',
             ]
         ];
 
         $this->tracing
             ->startActiveSpan(
-                'Processing message from "queueName" queue',
+                'RabbitMq: Processing message from "QueueName" queue',
                 $expectedSpanOptions
             )->shouldBeCalledTimes(1);
 
