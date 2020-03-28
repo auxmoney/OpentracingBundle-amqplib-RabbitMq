@@ -53,8 +53,8 @@ class ProducerTest extends TestCase
             'Publishing message to "exchangeName" exchange',
             [
                 'tags' => [
-                'RoutingKey' => 'none',
-                'ExchangeName' => 'exchangeName',
+                'message_bus.routing_key' => 'none',
+                'message_bus.exchange_name' => 'exchangeName',
                 'span.kind' => 'producer'
                 ]
             ]
@@ -88,8 +88,8 @@ class ProducerTest extends TestCase
             'Publishing message to "exchangeName" exchange',
             [
                 'tags' => [
-                    'RoutingKey' => 'none',
-                    'ExchangeName' => 'exchangeName',
+                    'message_bus.routing_key' => 'none',
+                    'message_bus.exchange_name' => 'exchangeName',
                     'span.kind' => 'producer'
                 ]
             ]
@@ -123,8 +123,8 @@ class ProducerTest extends TestCase
             'Publishing message to "exchangeName" exchange',
             [
                 'tags' => [
-                    'RoutingKey' => 'customRouting',
-                    'ExchangeName' => 'exchangeName',
+                    'message_bus.routing_key' => 'customRouting',
+                    'message_bus.exchange_name' => 'exchangeName',
                     'span.kind' => 'producer'
                 ]
             ]
@@ -158,8 +158,8 @@ class ProducerTest extends TestCase
             'Publishing message to "exchangeName" exchange',
             [
                 'tags' => [
-                    'RoutingKey' => 'none',
-                    'ExchangeName' => 'exchangeName',
+                    'message_bus.routing_key' => 'none',
+                    'message_bus.exchange_name' => 'exchangeName',
                     'span.kind' => 'producer'
                 ]
             ]

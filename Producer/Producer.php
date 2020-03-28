@@ -17,9 +17,9 @@ use const OpenTracing\Tags\SPAN_KIND_MESSAGE_BUS_PRODUCER;
  */
 final class Producer extends AmqplibProducer
 {
-    private const SPAN_NAME = 'Publishing message to "%s" exchange';
-    private const TAG_EXCHANGE_NAME = 'ExchangeName';
-    private const TAG_ROUTING_KEY = 'RoutingKey';
+    private const SPAN_NAME = 'RabbitMq: Publishing message to "%s" exchange';
+    private const TAG_EXCHANGE_NAME = 'message_bus.exchange_name';
+    private const TAG_ROUTING_KEY = 'message_bus.routing_key';
 
     private $tracingService;
 
