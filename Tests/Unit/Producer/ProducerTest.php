@@ -50,7 +50,7 @@ class ProducerTest extends TestCase
     public function testPublishWithoutHeaders(): void
     {
         $this->tracingService->startActiveSpan(
-            'Publishing message to "exchangeName" exchange',
+            'RabbitMq: Publishing message to "exchangeName" exchange',
             [
                 'tags' => [
                 'message_bus.routing_key' => 'none',
@@ -85,7 +85,7 @@ class ProducerTest extends TestCase
     public function testPublishWithHeaders(): void
     {
         $this->tracingService->startActiveSpan(
-            'Publishing message to "exchangeName" exchange',
+            'RabbitMq: Publishing message to "exchangeName" exchange',
             [
                 'tags' => [
                     'message_bus.routing_key' => 'none',
@@ -120,7 +120,7 @@ class ProducerTest extends TestCase
     public function testPublishWithRoutingKey(): void
     {
         $this->tracingService->startActiveSpan(
-            'Publishing message to "exchangeName" exchange',
+            'RabbitMq: Publishing message to "exchangeName" exchange',
             [
                 'tags' => [
                     'message_bus.routing_key' => 'customRouting',
@@ -155,7 +155,7 @@ class ProducerTest extends TestCase
     public function testPublishWithAdditionalProperties(): void
     {
         $this->tracingService->startActiveSpan(
-            'Publishing message to "exchangeName" exchange',
+            'RabbitMq: Publishing message to "exchangeName" exchange',
             [
                 'tags' => [
                     'message_bus.routing_key' => 'none',
