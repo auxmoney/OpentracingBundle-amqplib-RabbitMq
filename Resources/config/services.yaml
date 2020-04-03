@@ -1,0 +1,16 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Auxmoney\OpentracingAmqplibRabbitMqBundle\EventSubscriber\:
+    resource: '../../EventSubscriber'
+
+  Auxmoney\OpentracingAmqplibRabbitMqBundle\EventSubscriber\StartCommandSpanSubscriberDecorator:
+    decorates: Auxmoney\OpentracingBundle\EventListener\StartCommandSpanSubscriber
+    arguments: ['@Auxmoney\OpentracingAmqplibRabbitMqBundle\EventSubscriber\StartCommandSpanSubscriberDecorator.inner']
+
+  Auxmoney\OpentracingAmqplibRabbitMqBundle\EventSubscriber\FinishCommandSpanSubscriberDecorator:
+    decorates: Auxmoney\OpentracingBundle\EventListener\FinishCommandSpanSubscriber
+    arguments: ['@Auxmoney\OpentracingAmqplibRabbitMqBundle\EventSubscriber\FinishCommandSpanSubscriberDecorator.inner']
