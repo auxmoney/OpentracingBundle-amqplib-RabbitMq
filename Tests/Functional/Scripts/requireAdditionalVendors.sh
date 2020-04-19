@@ -2,5 +2,5 @@
 
 cd build/testproject/
 composer config extra.symfony.allow-contrib true
-composer require auxmoney/opentracing-bundle-amqplib-rabbitmq:${BRANCH}
+composer require auxmoney/opentracing-bundle-amqplib-rabbitmq:dev-${BRANCH}
 cd ../../
