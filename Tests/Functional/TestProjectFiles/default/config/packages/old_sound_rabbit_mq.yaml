@@ -1,0 +1,14 @@
+old_sound_rabbit_mq:
+  connections:
+    default:
+      url: '%env(RABBITMQ_URL)%'
+  producers:
+    test_queue:
+      connection:       default
+      exchange_options: { name: 'test_queue', type: direct }
+  consumers:
+    test_queue:
+      connection:       default
+      exchange_options: { name: 'test_queue', type: direct }
+      queue_options:    { name: 'test_queue'}
+      callback:         App\Consumer\TestConsumer
