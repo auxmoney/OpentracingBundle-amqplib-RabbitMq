@@ -1,0 +1,23 @@
+operationName: 'test:message'
+tags:
+  -
+    key: test.tag
+    value: command
+  -
+    key: command.exit-code
+    value: 0
+children:
+  -
+    operationName: 'RabbitMq: Publishing message to "test_queue" exchange'
+    tags: {  }
+    children:
+      -
+        operationName: 'RabbitMq: Processing message from "test_queue" queue'
+        tags: {  }
+        children:
+          -
+            operationName: 'manual consumer span'
+            tags:
+              -
+                key: test.tag
+                value: manual
