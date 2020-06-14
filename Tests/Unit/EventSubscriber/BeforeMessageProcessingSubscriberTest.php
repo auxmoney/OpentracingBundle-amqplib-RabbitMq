@@ -70,6 +70,7 @@ class BeforeMessageProcessingSubscriberTest extends TestCase
             'tags' => [
                 'span.kind' => 'consumer',
                 'message_bus.queue_name' => 'QueueName',
+                'auxmoney-opentracing-bundle.span-origin' => 'rabbitmq:consumer',
             ],
             'references' => Reference::create('follows_from', $spanContext->reveal())
         ];
@@ -111,6 +112,7 @@ class BeforeMessageProcessingSubscriberTest extends TestCase
             'tags' => [
                 'span.kind' => 'consumer',
                 'message_bus.queue_name' => 'QueueName',
+                'auxmoney-opentracing-bundle.span-origin' => 'rabbitmq:consumer',
             ]
         ];
 
@@ -150,6 +152,7 @@ class BeforeMessageProcessingSubscriberTest extends TestCase
             'tags' => [
                 'span.kind' => 'consumer',
                 'message_bus.queue_name' => 'QueueName',
+                'auxmoney-opentracing-bundle.span-origin' => 'rabbitmq:consumer',
             ]
         ];
 

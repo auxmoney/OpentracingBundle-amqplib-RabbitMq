@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Auxmoney\OpentracingAmqplibRabbitMqBundle\Producer;
 
+use Auxmoney\OpentracingBundle\Internal\Constant;
 use Auxmoney\OpentracingBundle\Service\Tracing;
 use OldSound\RabbitMqBundle\RabbitMq\Producer as AmqplibProducer;
 use PhpAmqpLib\Channel\AMQPChannel;
@@ -48,7 +49,8 @@ final class Producer extends AmqplibProducer
             'tags' => [
                 self::TAG_ROUTING_KEY => $routingKey ?: 'none',
                 self::TAG_EXCHANGE_NAME => $exchangeName,
-                SPAN_KIND => SPAN_KIND_MESSAGE_BUS_PRODUCER
+                SPAN_KIND => SPAN_KIND_MESSAGE_BUS_PRODUCER,
+                Constant::SPAN_ORIGIN => 'rabbitmq:producer'
             ]
         ];
 
