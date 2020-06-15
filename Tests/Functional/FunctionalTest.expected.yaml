@@ -1,6 +1,9 @@
 operationName: 'test:message'
 tags:
   -
+    key: auxmoney-opentracing-bundle.span-origin
+    value: 'core:command'
+  -
     key: command.exit-code
     value: 0
   -
@@ -19,7 +22,7 @@ children:
         tags:
           -
             key: auxmoney-opentracing-bundle.span-origin
-            value: 'rabbitmq:producer'
+            value: 'rabbitmq:consumer'
         children:
           -
             operationName: 'manual consumer span'
