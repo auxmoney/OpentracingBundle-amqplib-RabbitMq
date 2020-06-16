@@ -53,9 +53,10 @@ class ProducerTest extends TestCase
             'RabbitMq: Publishing message to "exchangeName" exchange',
             [
                 'tags' => [
-                'message_bus.routing_key' => 'none',
-                'message_bus.exchange_name' => 'exchangeName',
-                'span.kind' => 'producer'
+                    'message_bus.routing_key' => 'none',
+                    'message_bus.exchange_name' => 'exchangeName',
+                    'span.kind' => 'producer',
+                    'auxmoney-opentracing-bundle.span-origin' => 'rabbitmq:producer',
                 ]
             ]
         )->shouldBeCalledTimes(1);
@@ -90,7 +91,8 @@ class ProducerTest extends TestCase
                 'tags' => [
                     'message_bus.routing_key' => 'none',
                     'message_bus.exchange_name' => 'exchangeName',
-                    'span.kind' => 'producer'
+                    'span.kind' => 'producer',
+                    'auxmoney-opentracing-bundle.span-origin' => 'rabbitmq:producer',
                 ]
             ]
         )->shouldBeCalledTimes(1);
@@ -125,7 +127,8 @@ class ProducerTest extends TestCase
                 'tags' => [
                     'message_bus.routing_key' => 'customRouting',
                     'message_bus.exchange_name' => 'exchangeName',
-                    'span.kind' => 'producer'
+                    'span.kind' => 'producer',
+                    'auxmoney-opentracing-bundle.span-origin' => 'rabbitmq:producer',
                 ]
             ]
         )->shouldBeCalledTimes(1);
@@ -160,7 +163,8 @@ class ProducerTest extends TestCase
                 'tags' => [
                     'message_bus.routing_key' => 'none',
                     'message_bus.exchange_name' => 'exchangeName',
-                    'span.kind' => 'producer'
+                    'span.kind' => 'producer',
+                    'auxmoney-opentracing-bundle.span-origin' => 'rabbitmq:producer',
                 ]
             ]
         )->shouldBeCalledTimes(1);

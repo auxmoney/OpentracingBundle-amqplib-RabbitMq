@@ -1,19 +1,28 @@
 operationName: 'test:message'
 tags:
   -
-    key: test.tag
-    value: command
+    key: auxmoney-opentracing-bundle.span-origin
+    value: 'core:command'
   -
     key: command.exit-code
     value: 0
+  -
+    key: test.tag
+    value: command
 children:
   -
     operationName: 'RabbitMq: Publishing message to "test_queue" exchange'
-    tags: {  }
+    tags:
+      -
+        key: auxmoney-opentracing-bundle.span-origin
+        value: 'rabbitmq:producer'
     children:
       -
         operationName: 'RabbitMq: Processing message from "test_queue" queue'
-        tags: {  }
+        tags:
+          -
+            key: auxmoney-opentracing-bundle.span-origin
+            value: 'rabbitmq:consumer'
         children:
           -
             operationName: 'manual consumer span'

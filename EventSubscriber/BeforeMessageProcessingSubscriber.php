@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Auxmoney\OpentracingAmqplibRabbitMqBundle\EventSubscriber;
 
 use Auxmoney\OpentracingAmqplibRabbitMqBundle\Consumer\Consumer;
+use Auxmoney\OpentracingBundle\Internal\Constant;
 use Auxmoney\OpentracingBundle\Internal\Utility;
 use Auxmoney\OpentracingBundle\Service\Tracing;
 use OldSound\RabbitMqBundle\Event\AMQPEvent;
@@ -56,6 +57,7 @@ final class BeforeMessageProcessingSubscriber implements EventSubscriberInterfac
     {
         $options = [];
         $options['tags'][SPAN_KIND] = SPAN_KIND_MESSAGE_BUS_CONSUMER;
+        $options['tags'][Constant::SPAN_ORIGIN] = 'rabbitmq:consumer';
 
         /** @var Consumer $consumer */
         $consumer = $amqpEvent->getConsumer();

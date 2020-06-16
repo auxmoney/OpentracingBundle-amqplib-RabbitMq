@@ -6,7 +6,6 @@ namespace Auxmoney\OpentracingAmqplibRabbitMqBundle\Tests\Functional;
 
 use Auxmoney\OpentracingBundle\Tests\Functional\JaegerConsoleFunctionalTest;
 use Symfony\Component\Process\Process;
-use Symfony\Component\Yaml\Yaml;
 
 class FunctionalTest extends JaegerConsoleFunctionalTest
 {
@@ -27,7 +26,7 @@ class FunctionalTest extends JaegerConsoleFunctionalTest
         $spans = $this->getSpansFromTrace($this->getTraceFromJaegerAPI($traceId));
         self::assertCount(4, $spans);
 
-        $traceAsYAML = $this->getSpansAsYAML($spans, '[].{operationName: operationName, startTime: startTime, spanID: spanID, references: references, tags: tags[?key==\'command.exit-code\' || key==\'test.tag\'].{key: key, value: value}}');
+        $traceAsYAML = $this->getSpansAsYAML($spans, '[].{operationName: operationName, startTime: startTime, spanID: spanID, references: references, tags: tags[?key==\'command.exit-code\' || key==\'test.tag\' || key==\'auxmoney-opentracing-bundle.span-origin\'].{key: key, value: value}}');
         self::assertStringEqualsFile(__DIR__ . '/FunctionalTest.expected.yaml', $traceAsYAML);
     }
 }
