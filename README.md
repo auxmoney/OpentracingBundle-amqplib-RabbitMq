@@ -9,7 +9,7 @@
 ![Scrutinizer code quality (GitHub/Bitbucket)](https://img.shields.io/scrutinizer/quality/g/auxmoney/OpentracingBundle-amqplib-RabbitMq)
 ![GitHub](https://img.shields.io/github/license/auxmoney/OpentracingBundle-amqplib-RabbitMq)
 
-This bundle adds automatic tracing header propagation and spanning for [RabbitMq](https://github.com/php-amqplib/rabbitmq-bundle) producers 
+This bundle adds automatic tracing header propagation and spanning for [RabbitMq](https://github.com/php-amqplib/RabbitMqBundle) producers 
 and consumers to the [OpentracingBundle](https://github.com/auxmoney/OpentracingBundle-core).
 
 ## Installation
