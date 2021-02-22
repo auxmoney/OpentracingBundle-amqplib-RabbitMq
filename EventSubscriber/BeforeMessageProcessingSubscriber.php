@@ -12,6 +12,7 @@ use OldSound\RabbitMqBundle\Event\AMQPEvent;
 use OldSound\RabbitMqBundle\Event\BeforeProcessingMessageEvent;
 use OpenTracing\Reference;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+
 use const OpenTracing\Tags\SPAN_KIND;
 use const OpenTracing\Tags\SPAN_KIND_MESSAGE_BUS_CONSUMER;
 

@@ -9,6 +9,7 @@ use Auxmoney\OpentracingBundle\Service\Tracing;
 use OldSound\RabbitMqBundle\RabbitMq\Producer as AmqplibProducer;
 use PhpAmqpLib\Channel\AMQPChannel;
 use PhpAmqpLib\Connection\AbstractConnection;
+
 use const OpenTracing\Tags\SPAN_KIND;
 use const OpenTracing\Tags\SPAN_KIND_MESSAGE_BUS_PRODUCER;
 
