@@ -5,6 +5,7 @@ parameters:
   excludes_analyse:
     - Tests/*
     - vendor/*
+    - EventSubscriber/*MessageProcessingSubscriber.php # TODO: remove exclusion after disbanding Symfony 3.4
 
   level: 7
   inferPrivatePropertyTypeFromConstructor: true
