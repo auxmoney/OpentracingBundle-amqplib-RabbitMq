@@ -27,7 +27,7 @@ class TestCommand extends Command
         $this->producer = $producer;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->tracing->setTagOfActiveSpan('test.tag', 'command');
 
