@@ -1,3 +1,10 @@
+## [0.1.3](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/compare/v0.1.2...v0.1.3) (2021-04-12)
+
+
+### Bug Fixes
+
+* drop PHP versions 7.1 and 7.2 ([#12](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/issues/12)) ([2d29d5f](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/commit/2d29d5f797d8014c7a7c7c1d6e27f3a497c37857))
+
 ## [0.1.2](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/compare/v0.1.1...v0.1.2) (2020-12-28)
 
 
