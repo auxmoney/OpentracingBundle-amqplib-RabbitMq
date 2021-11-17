@@ -19,7 +19,7 @@ final class StartCommandSpanSubscriberDecorator implements EventSubscriberInterf
     }
 
     /**
-     * @return array<string,array>
+     * @return array<string,array<int,mixed>>
      */
     public static function getSubscribedEvents(): array
     {
