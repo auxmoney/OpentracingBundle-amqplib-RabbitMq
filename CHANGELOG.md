@@ -1,3 +1,13 @@
+# [1.0.0](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/compare/v0.1.3...v1.0.0) (2021-11-17)
+
+
+* feat!: update core and opentracing to v1 (#13) ([2946267](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/commit/2946267103514e3db7b9318ed5619cdcc41686bc)), closes [#13](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/issues/13)
+
+
+### BREAKING CHANGES
+
+* update core and opentracing to v1
+
 ## [0.1.3](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/compare/v0.1.2...v0.1.3) (2021-04-12)
 
 
