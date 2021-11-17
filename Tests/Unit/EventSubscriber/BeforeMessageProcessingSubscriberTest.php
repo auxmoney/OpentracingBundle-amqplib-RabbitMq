@@ -72,7 +72,7 @@ class BeforeMessageProcessingSubscriberTest extends TestCase
                 'message_bus.queue_name' => 'QueueName',
                 'auxmoney-opentracing-bundle.span-origin' => 'rabbitmq:consumer',
             ],
-            'references' => Reference::create('follows_from', $spanContext->reveal())
+            'references' => new Reference('follows_from', $spanContext->reveal())
         ];
 
         $this->tracing

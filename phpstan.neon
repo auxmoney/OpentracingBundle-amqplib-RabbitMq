@@ -2,7 +2,7 @@ parameters:
   paths:
     - .
 
-  excludes_analyse:
+  excludePaths:
     - Tests/*
     - vendor/*
     - EventSubscriber/*MessageProcessingSubscriber.php # TODO: remove exclusion after disbanding Symfony 3.4

@@ -70,7 +70,7 @@ final class BeforeMessageProcessingSubscriber implements EventSubscriberInterfac
             $applicationHeaders = $messageProperties['application_headers']->getNativeData();
             $externalSpanContext = $this->utility->extractSpanContext($applicationHeaders);
             if ($externalSpanContext) {
-                $options['references'] = Reference::create(Reference::FOLLOWS_FROM, $externalSpanContext);
+                $options['references'] = new Reference(Reference::FOLLOWS_FROM, $externalSpanContext);
             }
         }
 

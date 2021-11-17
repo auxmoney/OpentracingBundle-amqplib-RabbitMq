@@ -42,7 +42,7 @@ If you are not using it, you need to manually enable the bundle:
 ```
 
 ```php
-    # Symfony 4: bundles.php
+    # Symfony 4+: bundles.php
     Auxmoney\OpentracingAmqplibRabbitMqBundle\OpentracingAmqplibRabbitMqBundle::class => ['all' => true],
 ```
 
