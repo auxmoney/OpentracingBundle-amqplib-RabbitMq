@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/compare/v1.1.0...v1.1.1) (2021-11-26)
+
+
+### Bug Fixes
+
+* test symfony 5.3 instead of 3.4 ([#15](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/issues/15)) ([0608bcd](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/commit/0608bcd45b138af00039fc5c788ba6d1d966eb03))
+
 # [1.1.0](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/compare/v1.0.0...v1.1.0) (2021-11-26)
 
 
