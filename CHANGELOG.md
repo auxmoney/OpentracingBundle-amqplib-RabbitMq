@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/compare/v1.0.0...v1.1.0) (2021-11-26)
+
+
+### Features
+
+* bumped php-amqplib/rabbitmq-bundle to ^2.10.0 ([#14](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/issues/14)) ([7416215](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/commit/74162159a031935a706ee3cb18ac58839490a5d4))
+
 # [1.0.0](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/compare/v0.1.3...v1.0.0) (2021-11-17)
 
 
