@@ -21,7 +21,7 @@
     "php": "^7.3.27",
     "auxmoney/opentracing-bundle-core": "^v1.0",
     "opentracing/opentracing": "^1.0.1",
-    "php-amqplib/rabbitmq-bundle": "^1.0"
+    "php-amqplib/rabbitmq-bundle": "^2.10.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
