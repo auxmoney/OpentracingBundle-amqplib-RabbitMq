@@ -7,12 +7,15 @@ namespace Auxmoney\OpentracingAmqplibRabbitMqBundle\Tests\Unit\DependencyInjecti
 use Auxmoney\OpentracingAmqplibRabbitMqBundle\Consumer\Consumer;
 use Auxmoney\OpentracingAmqplibRabbitMqBundle\DependencyInjection\AmqplibRabbitMqConsumerCompilerPass;
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 use stdClass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 
 class AmqplibRabbitMqConsumerCompilerPassTest extends TestCase
 {
+    use ProphecyTrait;
+
     /** @var AmqplibRabbitMqConsumerCompilerPass */
     private $subject;
 

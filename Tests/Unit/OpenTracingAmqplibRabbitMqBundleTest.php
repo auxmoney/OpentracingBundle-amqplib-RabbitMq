@@ -8,10 +8,13 @@ use Auxmoney\OpentracingAmqplibRabbitMqBundle\DependencyInjection\AmqplibRabbitM
 use Auxmoney\OpentracingAmqplibRabbitMqBundle\DependencyInjection\AmqplibRabbitMqProducerCompilerPass;
 use Auxmoney\OpentracingAmqplibRabbitMqBundle\OpentracingAmqplibRabbitMqBundle;
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 class OpenTracingAmqplibRabbitMqBundleTest extends TestCase
 {
+    use ProphecyTrait;
+
     /** @var OpentracingAmqplibRabbitMqBundle */
     private $subject;
 

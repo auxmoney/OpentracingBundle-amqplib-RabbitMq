@@ -9,10 +9,13 @@ use Auxmoney\OpentracingBundle\Internal\Persistence;
 use Auxmoney\OpentracingBundle\Service\Tracing;
 use OldSound\RabbitMqBundle\Event\AMQPEvent;
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Prophecy\Prophecy\ObjectProphecy;
 
 class AfterMessageProcessingSubscriberTest extends TestCase
 {
+    use ProphecyTrait;
+
     /** @var Tracing|ObjectProphecy */
     private $tracing;
     /** @var Persistence|ObjectProphecy */

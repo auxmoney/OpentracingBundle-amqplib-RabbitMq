@@ -16,10 +16,13 @@ use PhpAmqpLib\Message\AMQPMessage;
 use PhpAmqpLib\Wire\AMQPTable;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Prophecy\Prophecy\ObjectProphecy;
 
 class BeforeMessageProcessingSubscriberTest extends TestCase
 {
+    use ProphecyTrait;
+
     /** @var Tracing|ObjectProphecy */
     private $tracing;
     /** @var Utility|ObjectProphecy */

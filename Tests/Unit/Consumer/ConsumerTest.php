@@ -7,10 +7,13 @@ namespace Auxmoney\OpentracingAmqplibRabbitMqBundle\Tests\Unit\Consumer;
 use Auxmoney\OpentracingAmqplibRabbitMqBundle\Consumer\Consumer;
 use PhpAmqpLib\Connection\AbstractConnection;
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Prophecy\Prophecy\ObjectProphecy;
 
 class ConsumerTest extends TestCase
 {
+    use ProphecyTrait;
+
     /** @var Consumer */
     private $subject;
 
