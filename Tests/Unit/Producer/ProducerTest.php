@@ -10,11 +10,14 @@ use PhpAmqpLib\Channel\AMQPChannel;
 use PhpAmqpLib\Connection\AbstractConnection;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Prophecy\Prophecy\ObjectProphecy;
 use Psr\Log\LoggerInterface;
 
 class ProducerTest extends TestCase
 {
+    use ProphecyTrait;
+
     /** @var Tracing|ObjectProphecy */
     private $tracingService;
     /** @var AbstractConnection|ObjectProphecy */

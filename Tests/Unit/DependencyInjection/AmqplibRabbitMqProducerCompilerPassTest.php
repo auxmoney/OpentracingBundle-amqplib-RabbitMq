@@ -9,12 +9,15 @@ use Auxmoney\OpentracingAmqplibRabbitMqBundle\Producer\Producer;
 use Auxmoney\OpentracingBundle\Service\Tracing;
 use Auxmoney\OpentracingBundle\Service\TracingService;
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 use stdClass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 
 class AmqplibRabbitMqProducerCompilerPassTest extends TestCase
 {
+    use ProphecyTrait;
+
     /** @var AmqplibRabbitMqProducerCompilerPass */
     private $subject;
 

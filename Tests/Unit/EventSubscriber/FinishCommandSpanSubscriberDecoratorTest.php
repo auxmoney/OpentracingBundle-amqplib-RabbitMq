@@ -10,6 +10,7 @@ use Auxmoney\OpentracingBundle\Internal\Persistence;
 use Auxmoney\OpentracingBundle\Service\Tracing;
 use OldSound\RabbitMqBundle\Command\BaseConsumerCommand;
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Prophecy\Prophecy\ObjectProphecy;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Event\ConsoleTerminateEvent;
@@ -18,6 +19,8 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class FinishCommandSpanSubscriberDecoratorTest extends TestCase
 {
+    use ProphecyTrait;
+
     /** @var Persistence|ObjectProphecy */
     private $persistence;
     /** @var Tracing|ObjectProphecy */

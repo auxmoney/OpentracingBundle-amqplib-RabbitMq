@@ -10,6 +10,7 @@ use Auxmoney\OpentracingBundle\Factory\SpanOptionsFactory;
 use Auxmoney\OpentracingBundle\Service\Tracing;
 use OldSound\RabbitMqBundle\Command\BaseConsumerCommand;
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Prophecy\Prophecy\ObjectProphecy;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Event\ConsoleEvent;
@@ -18,6 +19,8 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class StartCommandSpanSubscriberDecoratorTest extends TestCase
 {
+    use ProphecyTrait;
+
     /** @var Tracing|ObjectProphecy */
     private $tracing;
     /** @var SpanOptionsFactory|ObjectProphecy */
