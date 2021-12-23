@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/compare/v1.1.1...v1.2.0) (2021-12-23)
+
+
+### Features
+
+* support PHP 8 ([#17](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/issues/17)) ([acbde3e](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/commit/acbde3e06073648fe78ad556a6fd510bcf247115))
+
 ## [1.1.1](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/compare/v1.1.0...v1.1.1) (2021-11-26)
 
 
