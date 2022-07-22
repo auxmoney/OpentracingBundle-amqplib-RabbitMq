@@ -51,6 +51,8 @@ class StartCommandSpanSubscriberDecoratorTest extends TestCase
     public function testOnCommandWithNonBaseConsumerCommand(): void
     {
         $command = $this->prophesize(Command::class);
+        $command->getName()->willReturn('command name');
+        $command->getDescription()->willReturn('command description');
         $input = $this->prophesize(InputInterface::class);
         $output = $this->prophesize(OutputInterface::class);
 
