@@ -31,13 +31,13 @@ class OpenTracingAmqplibRabbitMqBundleTest extends TestCase
             new AmqplibRabbitMqProducerCompilerPass(),
             'beforeOptimization',
             -999
-        )->shouldBeCalled();
+        )->shouldBeCalled()->willReturn($containerBuilder->reveal());
 
         $containerBuilder->addCompilerPass(
             new AmqplibRabbitMqConsumerCompilerPass(),
             'beforeOptimization',
             -999
-        )->shouldBeCalled();
+        )->shouldBeCalled()->willReturn($containerBuilder->reveal());
 
         $this->subject->build($containerBuilder->reveal());
     }
