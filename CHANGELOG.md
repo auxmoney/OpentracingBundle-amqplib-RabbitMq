@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/compare/v1.2.0...v1.2.1) (2022-07-24)
+
+
+### Bug Fixes
+
+* symfony/flex plugin ([#18](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/issues/18)) ([d263370](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/commit/d26337012455eedafea3ab262b5896543296540e))
+
 # [1.2.0](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/compare/v1.1.1...v1.2.0) (2021-12-23)
 
 
