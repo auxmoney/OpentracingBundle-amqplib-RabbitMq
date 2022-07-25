@@ -1,7 +1,7 @@
 # auxmoney OpentracingBundle - amqplib/RabbitMq
 
 [![test](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/workflows/test/badge.svg)](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/actions?query=workflow%3Atest)
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/auxmoney/OpentracingBundle-amqplib-RabbitMq)
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/auxmoney/OpentracingBundle-amqplib-RabbitMq)](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/releases/latest)
 ![Coveralls github](https://img.shields.io/coveralls/github/auxmoney/OpentracingBundle-amqplib-RabbitMq)
 ![Codacy Badge](https://api.codacy.com/project/badge/Grade/0f9a9d8ae1084efaa11ec443ca426a75)
 ![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/auxmoney/OpentracingBundle-amqplib-RabbitMq)

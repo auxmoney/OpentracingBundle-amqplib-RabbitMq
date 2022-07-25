@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bbd66b996f0cbcec84ba039ecab10654",
+    "content-hash": "4e26e2a7b66cd34b083b2308b26c020f",
     "packages": [
         {
             "name": "auxmoney/opentracing-bundle-core",

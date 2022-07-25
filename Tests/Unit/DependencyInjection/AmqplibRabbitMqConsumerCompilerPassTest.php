@@ -16,8 +16,7 @@ class AmqplibRabbitMqConsumerCompilerPassTest extends TestCase
 {
     use ProphecyTrait;
 
-    /** @var AmqplibRabbitMqConsumerCompilerPass */
-    private $subject;
+    private AmqplibRabbitMqConsumerCompilerPass $subject;
 
     public function setUp(): void
     {

@@ -15,8 +15,7 @@ class OpenTracingAmqplibRabbitMqBundleTest extends TestCase
 {
     use ProphecyTrait;
 
-    /** @var OpentracingAmqplibRabbitMqBundle */
-    private $subject;
+    private OpentracingAmqplibRabbitMqBundle $subject;
 
     public function setUp(): void
     {

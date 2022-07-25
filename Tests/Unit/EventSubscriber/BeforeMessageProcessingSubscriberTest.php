@@ -27,8 +27,7 @@ class BeforeMessageProcessingSubscriberTest extends TestCase
     private $tracing;
     /** @var Utility|ObjectProphecy */
     private $utility;
-    /** @var BeforeMessageProcessingSubscriber */
-    private $subject;
+    private BeforeMessageProcessingSubscriber $subject;
 
     public function setUp(): void
     {

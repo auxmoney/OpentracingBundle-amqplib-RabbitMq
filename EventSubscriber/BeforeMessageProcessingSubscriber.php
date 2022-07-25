@@ -9,7 +9,6 @@ use Auxmoney\OpentracingBundle\Internal\Constant;
 use Auxmoney\OpentracingBundle\Internal\Utility;
 use Auxmoney\OpentracingBundle\Service\Tracing;
 use OldSound\RabbitMqBundle\Event\AMQPEvent;
-use OldSound\RabbitMqBundle\Event\BeforeProcessingMessageEvent;
 use OpenTracing\Reference;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
@@ -21,13 +20,13 @@ final class BeforeMessageProcessingSubscriber implements EventSubscriberInterfac
     private const SPAN_NAME = 'RabbitMq: Processing message from "%s" queue';
     private const TAG_QUEUE_NAME = 'message_bus.queue_name';
 
-    private $utility;
-    private $tracing;
+    private Tracing $tracing;
+    private Utility $utility;
 
     public function __construct(Tracing $tracing, Utility $utility)
     {
-        $this->utility = $utility;
         $this->tracing = $tracing;
+        $this->utility = $utility;
     }
 
     /**
@@ -35,7 +34,7 @@ final class BeforeMessageProcessingSubscriber implements EventSubscriberInterfac
      */
     public static function getSubscribedEvents(): array
     {
-        return [BeforeProcessingMessageEvent::BEFORE_PROCESSING_MESSAGE => 'onBeforeMessageProcessing'];
+        return [AMQPEvent::BEFORE_PROCESSING_MESSAGE => 'onBeforeMessageProcessing'];
     }
 
     public function onBeforeMessageProcessing(AMQPEvent $amqpEvent): void
