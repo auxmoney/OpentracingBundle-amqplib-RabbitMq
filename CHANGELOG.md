@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/compare/v1.2.1...v1.3.0) (2022-07-26)
+
+
+### Features
+
+* support Symfony 6 ([#19](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/issues/19)) ([db66d42](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/commit/db66d42ab490e7e4b27501b91bebb356864eaa26))
+
 ## [1.2.1](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/compare/v1.2.0...v1.2.1) (2022-07-24)
 
 
