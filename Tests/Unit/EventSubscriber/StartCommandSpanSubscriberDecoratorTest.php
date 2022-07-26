@@ -21,26 +21,21 @@ class StartCommandSpanSubscriberDecoratorTest extends TestCase
 {
     use ProphecyTrait;
 
-    /** @var Tracing|ObjectProphecy */
-    private $tracing;
     /** @var SpanOptionsFactory|ObjectProphecy */
     private $spanOptionsFactory;
-    /** @var StartCommandSpanSubscriber|ObjectProphecy */
-    private $decoratedSubscriber;
-    /** @var StartCommandSpanSubscriberDecorator */
-    private $subject;
+    private StartCommandSpanSubscriberDecorator $subject;
 
     public function setUp(): void
     {
-        $this->tracing = $this->prophesize(Tracing::class);
+        $tracing = $this->prophesize(Tracing::class);
         $this->spanOptionsFactory = $this->prophesize(SpanOptionsFactory::class);
 
-        $this->decoratedSubscriber = new StartCommandSpanSubscriber(
-            $this->tracing->reveal(),
+        $decoratedSubscriber = new StartCommandSpanSubscriber(
+            $tracing->reveal(),
             $this->spanOptionsFactory->reveal()
         );
 
-        $this->subject = new StartCommandSpanSubscriberDecorator($this->decoratedSubscriber);
+        $this->subject = new StartCommandSpanSubscriberDecorator($decoratedSubscriber);
     }
 
     public function testGetSubscribedEvents(): void

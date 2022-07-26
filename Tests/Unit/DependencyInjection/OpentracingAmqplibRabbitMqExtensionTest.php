@@ -16,8 +16,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 class OpentracingAmqplibRabbitMqExtensionTest extends TestCase
 {
-    /** @var OpentracingAmqplibRabbitMqExtension */
-    private $subject;
+    private OpentracingAmqplibRabbitMqExtension $subject;
 
     public function setUp(): void
     {

@@ -20,8 +20,7 @@ class AfterMessageProcessingSubscriberTest extends TestCase
     private $tracing;
     /** @var Persistence|ObjectProphecy */
     private $persistence;
-    /** @var AfterMessageProcessingSubscriber */
-    private $subject;
+    private AfterMessageProcessingSubscriber $subject;
 
     public function setUp(): void
     {

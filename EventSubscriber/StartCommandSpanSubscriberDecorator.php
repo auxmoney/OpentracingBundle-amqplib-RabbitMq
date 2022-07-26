@@ -11,7 +11,7 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 final class StartCommandSpanSubscriberDecorator implements EventSubscriberInterface
 {
-    private $decoratedSubscriber;
+    private StartCommandSpanSubscriber $decoratedSubscriber;
 
     public function __construct(StartCommandSpanSubscriber $decoratedSubscriber)
     {

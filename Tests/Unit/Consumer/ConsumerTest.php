@@ -8,22 +8,17 @@ use Auxmoney\OpentracingAmqplibRabbitMqBundle\Consumer\Consumer;
 use PhpAmqpLib\Connection\AbstractConnection;
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
-use Prophecy\Prophecy\ObjectProphecy;
 
 class ConsumerTest extends TestCase
 {
     use ProphecyTrait;
 
-    /** @var Consumer */
-    private $subject;
-
-    /** @var AbstractConnection|ObjectProphecy */
-    private $conn;
+    private Consumer $subject;
 
     public function setUp(): void
     {
-        $this->conn = $this->prophesize(AbstractConnection::class);
-        $this->subject = new Consumer($this->conn->reveal());
+        $conn = $this->prophesize(AbstractConnection::class);
+        $this->subject = new Consumer($conn->reveal());
     }
 
     public function testGetQueueOptions(): void

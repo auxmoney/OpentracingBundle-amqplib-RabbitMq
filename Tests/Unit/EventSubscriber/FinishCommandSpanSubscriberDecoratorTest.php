@@ -21,26 +21,21 @@ class FinishCommandSpanSubscriberDecoratorTest extends TestCase
 {
     use ProphecyTrait;
 
-    /** @var Persistence|ObjectProphecy */
-    private $persistence;
     /** @var Tracing|ObjectProphecy */
     private $tracing;
-    /** @var FinishCommandSpanSubscriber|ObjectProphecy */
-    private $decoratedSubscriber;
-    /** @var FinishCommandSpanSubscriberDecorator */
-    private $subject;
+    private FinishCommandSpanSubscriberDecorator $subject;
 
     public function setUp(): void
     {
         $this->tracing = $this->prophesize(Tracing::class);
-        $this->persistence = $this->prophesize(Persistence::class);
+        $persistence = $this->prophesize(Persistence::class);
 
-        $this->decoratedSubscriber = new FinishCommandSpanSubscriber(
+        $decoratedSubscriber = new FinishCommandSpanSubscriber(
             $this->tracing->reveal(),
-            $this->persistence->reveal()
+            $persistence->reveal()
         );
 
-        $this->subject = new FinishCommandSpanSubscriberDecorator($this->decoratedSubscriber);
+        $this->subject = new FinishCommandSpanSubscriberDecorator($decoratedSubscriber);
     }
 
     public function testGetSubscribedEvents(): void

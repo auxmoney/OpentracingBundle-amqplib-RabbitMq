@@ -23,7 +23,7 @@ final class Producer extends AmqplibProducer
     private const TAG_EXCHANGE_NAME = 'message_bus.exchange_name';
     private const TAG_ROUTING_KEY = 'message_bus.routing_key';
 
-    private $tracingService;
+    private Tracing $tracingService;
 
     public function __construct(
         Tracing $tracingService,

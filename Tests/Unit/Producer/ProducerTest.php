@@ -20,27 +20,23 @@ class ProducerTest extends TestCase
 
     /** @var Tracing|ObjectProphecy */
     private $tracingService;
-    /** @var AbstractConnection|ObjectProphecy */
-    private $connection;
-    /** @var AMQPChannel|ObjectProphecy */
-    private $channel;
     /** @var LoggerInterface|ObjectProphecy */
     private $logger;
     /** @var Producer */
-    private $subject;
+    private Producer $subject;
 
     public function setUp(): void
     {
         $this->tracingService = $this->prophesize(Tracing::class);
-        $this->connection = $this->prophesize(AbstractConnection::class);
-        $this->channel = $this->prophesize(AMQPChannel::class);
-        $this->channel->getChannelId()->willReturn('channelId');
-        $this->channel->basic_publish(Argument::cetera())->shouldBeCalledTimes(1);
+        $connection = $this->prophesize(AbstractConnection::class);
+        $channel = $this->prophesize(AMQPChannel::class);
+        $channel->getChannelId()->willReturn('channelId');
+        $channel->basic_publish(Argument::cetera())->shouldBeCalledTimes(1);
 
         $this->subject = new Producer(
             $this->tracingService->reveal(),
-            $this->connection->reveal(),
-            $this->channel->reveal()
+            $connection->reveal(),
+            $channel->reveal()
         );
 
         $this->logger = $this->prophesize(LoggerInterface::class);
