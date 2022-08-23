@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/compare/v1.3.0...v1.3.1) (2022-08-23)
+
+
+### Bug Fixes
+
+* symfony cli installation ([#20](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/issues/20)) ([1428f0c](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/commit/1428f0cec9437b21b7c7b929fe610e7879bd8d97))
+
 # [1.3.0](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/compare/v1.2.1...v1.3.0) (2022-07-26)
 
 
