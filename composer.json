@@ -33,7 +33,8 @@
     "symfony/filesystem": "*",
     "symfony/process": "*",
     "symfony/yaml": "*",
-    "mtdowling/jmespath.php": "^2.6"
+    "mtdowling/jmespath.php": "^2.6",
+    "guzzle/guzzle": "^3.8"
   },
   "autoload": {
     "psr-4": {
