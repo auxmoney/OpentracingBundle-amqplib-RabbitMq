@@ -29,6 +29,7 @@ class ProducerTest extends TestCase
     {
         $this->tracingService = $this->prophesize(Tracing::class);
         $connection = $this->prophesize(AbstractConnection::class);
+        $connection->connectOnConstruct()->willReturn(false);
         $channel = $this->prophesize(AMQPChannel::class);
         $channel->getChannelId()->willReturn('channelId');
         $channel->basic_publish(Argument::cetera())->shouldBeCalledTimes(1);

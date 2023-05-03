@@ -18,6 +18,7 @@ class ConsumerTest extends TestCase
     public function setUp(): void
     {
         $conn = $this->prophesize(AbstractConnection::class);
+        $conn->connectOnConstruct()->willReturn(false);
         $this->subject = new Consumer($conn->reveal());
     }
 

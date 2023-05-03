@@ -53,6 +53,7 @@ class BeforeMessageProcessingSubscriberTest extends TestCase
             ->willReturn(['application_headers' => $headerTable]);
 
         $connection = $this->prophesize(AbstractConnection::class);
+        $connection->connectOnConstruct()->willReturn(false);
 
         $consumer = new Consumer($connection->reveal());
         $consumer->setQueueOptions(['name' => 'QueueName']);
@@ -97,6 +98,7 @@ class BeforeMessageProcessingSubscriberTest extends TestCase
             ->willReturn(['application_headers' => $headerTable]);
 
         $connection = $this->prophesize(AbstractConnection::class);
+        $connection->connectOnConstruct()->willReturn(false);
 
         $consumer = new Consumer($connection->reveal());
         $consumer->setQueueOptions(['name' => 'QueueName']);
@@ -138,6 +140,7 @@ class BeforeMessageProcessingSubscriberTest extends TestCase
             ->willReturn(['X-DEATH' => $headerTable]);
 
         $connection = $this->prophesize(AbstractConnection::class);
+        $connection->connectOnConstruct()->willReturn(false);
 
         $consumer = new Consumer($connection->reveal());
         $consumer->setQueueOptions(['name' => 'QueueName']);
