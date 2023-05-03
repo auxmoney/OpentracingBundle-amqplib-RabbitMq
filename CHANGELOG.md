@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/compare/v1.3.1...v1.3.2) (2023-05-03)
+
+
+### Bug Fixes
+
+* update supported PHP and Symfony versions + fix composer behavio… ([#21](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/issues/21)) ([addc9cc](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/commit/addc9cc490c118167fa752cd1175eb4e0eaef855))
+
 ## [1.3.1](https://github.com/auxmoney/OpentracingBundle-amqplib-RabbitMq/compare/v1.3.0...v1.3.1) (2022-08-23)
 
 
